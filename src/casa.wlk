@@ -10,6 +10,9 @@ object casaDePepeYJulian {
 		self.gastar(cosa.precio())
 	}
 	
+	method indicarCuenta(cuenta) {
+		cuentaQueEstoyUsando = cuenta
+	}
 	method gastar(importe){
 		cuentaQueEstoyUsando.extraer(importe)
 	}
@@ -82,5 +85,13 @@ object casaDePepeYJulian {
 	
 	method primeraComidaComprada(){
 		return self.comidaComprada().first()
+	}
+	
+	method precioPromedioComida() {
+		return self.gastoEnComida() / self.comidaComprada().size() 
+	}
+	
+	method repitioCompra() {
+		return cosas.occurrencesOf({})
 	}
 }
